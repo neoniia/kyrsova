@@ -5,7 +5,7 @@ import { resolve } from 'path';
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
 export default defineConfig({
-  base: '/',
+  base: '/kyrsova/',
   root: './src',
   publicDir: resolve(__dirname, 'public'),
   build: {
