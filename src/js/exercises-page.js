@@ -81,7 +81,8 @@ export function initExercisesPage() {
   const backBtn = document.getElementById('back-btn');
   if (backBtn) {
     backBtn.addEventListener('click', () => {
-      window.location.href = './index.html';
+      const base = import.meta.env.BASE_URL || '/';
+      window.location.href = `${base}index.html`;
     });
   }
 
@@ -763,9 +764,10 @@ async function loadExercisesPage(page, filterType, filterValue) {
   }
 
   // Оновлюємо URL без перезавантаження сторінки
+  const base = import.meta.env.BASE_URL || '/';
   const urlParams = new URLSearchParams(window.location.search);
   urlParams.set('page', page.toString());
-  window.history.pushState({}, '', `./page-3.html?${urlParams.toString()}`);
+  window.history.pushState({}, '', `${base}page-3.html?${urlParams.toString()}`);
 
   const params = {
     page,

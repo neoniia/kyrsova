@@ -111,7 +111,8 @@ function navigateToExercisesPage(category, filterType) {
   params.append('name', categoryName);
   
   // Переходимо на сторінку з вправами
-  window.location.href = `./page-3.html?${params.toString()}`;
+  const base = import.meta.env.BASE_URL || '/';
+  window.location.href = `${base}page-3.html?${params.toString()}`;
 }
 
 /**

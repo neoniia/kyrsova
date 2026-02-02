@@ -6,7 +6,8 @@ export function initHeader() {
   if (!headerContainer) return;
 
   // Завантажуємо header з partials
-  fetch('./partials/header.html')
+  const base = import.meta.env.BASE_URL || '/';
+  fetch(`${base}partials/header.html`)
     .then(response => response.text())
     .then(html => {
       headerContainer.innerHTML = html;

@@ -9,7 +9,8 @@ export function initFooter() {
   if (!footerContainer) return;
 
   // Завантажуємо footer з partials
-  fetch('./partials/footer.html')
+  const base = import.meta.env.BASE_URL || '/';
+  fetch(`${base}partials/footer.html`)
     .then(response => response.text())
     .then(html => {
       footerContainer.innerHTML = html;
