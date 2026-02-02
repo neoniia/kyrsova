@@ -7,7 +7,7 @@ const __dirname = fileURLToPath(new URL('.', import.meta.url));
 export default defineConfig({
   base: '/kyrsova/',
   root: './src',
-  publicDir: resolve(__dirname, 'public'),
+  publicDir: resolve(__dirname, 'src/public'),
   build: {
     outDir: resolve(__dirname, 'dist'),
     assetsDir: 'assets',
