@@ -1,8 +1,8 @@
 # Your Energy
 
-## 🌐 [👉 Перейти на сайт 👈](https://neoniia.github.io/kyrsova/)
+## 🌐 [Перейти на сайт](https://neoniia.github.io/kyrsova/)
 
-**Живий сайт:** [https://neoniia.github.io/kyrsova/](https://neoniia.github.io/kyrsova/)
+**Живий сайт:** https://neoniia.github.io/kyrsova/
 
 Односторінковий застосунок (SPA) для пошуку та управління фітнес-вправами.
 
