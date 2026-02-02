@@ -11,12 +11,21 @@ export function initFooter() {
   // Завантажуємо footer з partials
   const base = import.meta.env.BASE_URL || '/';
   fetch(`${base}partials/footer.html`)
-    .then(response => response.text())
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.text();
+    })
     .then(html => {
+      // Замінюємо шляхи на правильні з base path
+      html = html.replace(/href="\/([^"]+)"/g, `href="${base}$1"`);
+      html = html.replace(/src="\/([^"]+)"/g, `src="${base}$1"`);
       footerContainer.innerHTML = html;
       setupSubscribeForm();
     })
     .catch(error => {
+      console.error('Error loading footer:', error);
     });
 }
 

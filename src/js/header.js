@@ -8,13 +8,22 @@ export function initHeader() {
   // Завантажуємо header з partials
   const base = import.meta.env.BASE_URL || '/';
   fetch(`${base}partials/header.html`)
-    .then(response => response.text())
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.text();
+    })
     .then(html => {
+      // Замінюємо шляхи на правильні з base path
+      html = html.replace(/href="\/([^"]+)"/g, `href="${base}$1"`);
+      html = html.replace(/src="\/([^"]+)"/g, `src="${base}$1"`);
       headerContainer.innerHTML = html;
       setupBurgerMenu();
       setupNavigation();
     })
     .catch(error => {
+      console.error('Error loading header:', error);
     });
 }
 
