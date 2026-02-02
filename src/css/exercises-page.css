@@ -1,0 +1,710 @@
+/* Exercises Page Styles */
+.exercises-page {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.exercises-page-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.page-header-content {
+  flex: 1;
+}
+
+.page-description {
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.4;
+  margin-top: 0.4rem;
+  max-width: 100%;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 0.85rem;
+  transition: background-color 0.3s;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.back-btn:hover {
+  background-color: #45a049;
+}
+
+.back-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.page-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.exercises-page-content {
+  margin-top: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.search-form {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+  background-color: white;
+  color: #1a1a1a;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #4caf50;
+}
+
+.search-button {
+  padding: 0.75rem 1.25rem;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-button:hover {
+  background-color: #45a049;
+}
+
+.search-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Muscle Tabs Container */
+.muscle-tabs-container {
+  margin-bottom: 0.75rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.muscle-tabs-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.muscle-tabs-container::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 3px;
+}
+
+.muscle-tabs-container::-webkit-scrollbar-thumb {
+  background: #4caf50;
+  border-radius: 3px;
+}
+
+.muscle-tabs {
+  display: flex;
+  gap: 0.3rem;
+  flex-wrap: nowrap;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.muscle-tab {
+  padding: 0.3rem 0.5rem;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-size: 0.7rem;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-bottom: -2px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.muscle-tab:hover {
+  color: #1a1a1a;
+  background-color: #f5f5f5;
+  border-radius: 4px 4px 0 0;
+}
+
+.muscle-tab.active {
+  color: #1a1a1a;
+  border-bottom-color: #4caf50;
+  font-weight: bold;
+  background-color: #f9f9f9;
+  border-radius: 3px 3px 0 0;
+}
+
+@media (min-width: 768px) {
+  .muscle-tabs {
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  
+  .muscle-tab {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.6rem;
+  }
+}
+
+.exercises-page .exercises-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .exercises-page .exercises-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .exercises-page .exercises-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+}
+
+.exercises-page .exercise-card-image {
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f0f0f0;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.exercises-page .exercise-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.exercises-page .exercise-description {
+  margin: 0.5rem 0;
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.5;
+  overflow: visible;
+  max-height: none;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  /* Не обмежуємо висоту для сторінки категорії - показуємо повний опис */
+}
+
+.exercises-page .exercise-description p {
+  margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.exercises-page .exercise-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.exercises-page .rating-stars-inline {
+  display: flex;
+  gap: 0.1rem;
+  align-items: center;
+}
+
+.exercises-page .rating-stars-inline .star {
+  font-size: 14px;
+  color: #ddd;
+}
+
+.exercises-page .rating-stars-inline .star.full {
+  color: #ffd700;
+}
+
+.exercises-page .rating-stars-inline .star.half {
+  background: linear-gradient(90deg, #ffd700 50%, #ddd 50%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.exercises-page .exercise-steps {
+  margin: 0.5rem 0;
+  padding: 0.875rem;
+  background-color: #000000;
+  border-radius: 6px;
+  border-left: 3px solid #4caf50;
+}
+
+.exercises-page .exercise-steps h4 {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0 0 0.5rem 0;
+}
+
+.exercises-page .steps-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: #ffffff;
+  line-height: 1.6;
+  font-size: 0.85rem;
+}
+
+.exercises-page .steps-list li {
+  margin-bottom: 0.4rem;
+  color: #ffffff;
+}
+
+.exercises-page .steps-list li:last-child {
+  margin-bottom: 0;
+}
+
+.exercises-page .page-header-content {
+  flex: 1;
+}
+
+.exercises-page .page-description {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-top: 0.5rem;
+  max-width: 800px;
+}
+
+/* Картки в стилі модального вікна для сторінки abs */
+.exercise-modal-style-card {
+  background-color: #1a1a1a;
+  border-radius: 6px;
+  padding: 0;
+  margin-bottom: 0.5rem;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+  min-height: 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.exercise-modal-style-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.exercise-card-content {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  overflow: visible;
+  min-height: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.exercise-image-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 200px;
+  min-width: 200px;
+  box-sizing: border-box;
+}
+
+.exercise-image {
+  width: 100%;
+  height: 180px;
+  border-radius: 6px 0 0 6px;
+  overflow: hidden;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.exercise-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+.exercise-start-container {
+  margin-top: 0.3rem;
+  width: 100%;
+  padding: 0 0.3rem;
+}
+
+.exercise-start-container .btn-start {
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  width: 100%;
+  background-color: #4caf50;
+  color: white;
+  display: block;
+}
+
+.exercise-start-container .btn-start:hover {
+  background-color: #45a049;
+  transform: scale(1.02);
+}
+
+.exercise-image-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+}
+
+.exercise-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.5rem;
+  background-color: #1a1a1a;
+  border-radius: 0 6px 6px 0;
+  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.exercise-info-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.exercise-name {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+  line-height: 1.3;
+  flex: 1;
+}
+
+.exercise-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.exercise-rating span {
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: white;
+}
+
+.exercise-rating .stars {
+  display: flex;
+  gap: 0.1rem;
+}
+
+.exercise-rating .stars .star {
+  font-size: 0.8rem;
+  color: #444;
+}
+
+.exercise-rating .stars .star.full {
+  color: #ffd700;
+}
+
+.exercise-rating .stars .star.half {
+  background: linear-gradient(90deg, #ffd700 50%, #444 50%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.exercise-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.3rem;
+  font-size: 0.7rem;
+  color: #ccc;
+  padding: 0.4rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.exercise-details p {
+  margin: 0;
+}
+
+.exercise-details strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.exercise-description {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: #ddd;
+  overflow: visible;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  margin: 0;
+}
+
+.exercise-description p {
+  margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.exercise-steps {
+  margin: 0.2rem 0;
+  padding: 0.4rem;
+  background-color: #000000;
+  border-radius: 5px;
+  border-left: 2px solid #4caf50;
+  max-height: 80px;
+  overflow: hidden;
+}
+
+.exercise-steps h4 {
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0 0 0.3rem 0;
+}
+
+.exercise-steps .steps-list {
+  margin: 0;
+  padding-left: 0.8rem;
+  color: #ffffff;
+  line-height: 1.2;
+  font-size: 0.65rem;
+}
+
+.exercise-steps .steps-list li {
+  margin-bottom: 0.2rem;
+  color: #ffffff;
+}
+
+.exercise-steps .steps-list li:last-child {
+  margin-bottom: 0;
+}
+
+.exercise-actions {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-top: 0.2rem;
+}
+
+.exercise-actions .btn {
+  padding: 0.5rem 0.8rem;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  flex: 1;
+  min-width: 120px;
+}
+
+.exercise-actions .btn-favorite {
+  background-color: #4caf50;
+  color: white;
+}
+
+.exercise-actions .btn-favorite:hover {
+  background-color: #45a049;
+  transform: scale(1.02);
+}
+
+.exercise-actions .btn-favorite.active {
+  background-color: #f44336;
+}
+
+.exercise-actions .btn-favorite.active:hover {
+  background-color: #da190b;
+}
+
+.exercise-actions .btn-rating {
+  background-color: #2196f3;
+  color: white;
+}
+
+.exercise-actions .btn-rating:hover {
+  background-color: #0b7dda;
+  transform: scale(1.02);
+}
+
+/* Адаптивність для карток модального стилю */
+@media (min-width: 768px) {
+  .exercise-card-content {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  .exercise-image {
+    flex: 0 0 160px;
+    height: 160px;
+    max-width: 160px;
+    min-width: 0;
+  }
+
+  .exercise-start-container {
+    flex: 0 0 160px;
+    max-width: 160px;
+    min-width: 0;
+  }
+
+  .exercise-info {
+    flex: 1;
+    min-width: 0;
+    overflow: visible;
+  }
+
+  .exercise-details {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .exercise-modal-style-card {
+    padding: 0.6rem;
+  }
+
+  .exercise-image {
+    flex: 0 0 160px;
+    height: 160px;
+    max-width: 160px;
+    min-width: 0;
+  }
+}
+
+/* Pagination Styles */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.pagination-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
+  color: #9e9e9e;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+  line-height: 1;
+}
+
+.pagination-btn:hover:not(.disabled):not(.active) {
+  color: #616161;
+  background-color: #f5f5f5;
+}
+
+.pagination-btn.active {
+  background-color: #616161;
+  color: #ffffff;
+  font-weight: 500;
+  cursor: default;
+}
+
+.pagination-btn.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.pagination-btn:focus {
+  outline: 2px solid #4caf50;
+  outline-offset: 2px;
+}
+
+/* Responsive pagination */
+@media (max-width: 480px) {
+  .pagination {
+    gap: 0.25rem;
+  }
+
+  .pagination-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+}

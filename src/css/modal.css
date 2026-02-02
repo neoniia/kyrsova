@@ -1,0 +1,355 @@
+/* Modal Styles */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.modal {
+  background-color: #2a2a2a;
+  border-radius: 12px;
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  color: white;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transition: background-color 0.3s;
+  z-index: 10;
+}
+
+.modal-close:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.modal-content {
+  padding: 2rem;
+}
+
+/* Exercise Modal */
+.exercise-modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.exercise-image {
+  width: 100%;
+  border-radius: 8px;
+  overflow: visible;
+  background-color: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.exercise-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-height: 500px;
+  border-radius: 8px;
+}
+
+.exercise-muscle-image {
+  background-color: #2a2a2a;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.exercise-muscle-image img {
+  width: 100%;
+  height: auto;
+  max-height: 600px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.exercise-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #1a1a1a;
+}
+
+.exercise-video iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.exercise-modal-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.exercise-modal-name {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+}
+
+.exercise-modal-rating {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.exercise-modal-rating span {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.stars {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.star {
+  font-size: 1.5rem;
+  color: #666;
+}
+
+.star.full {
+  color: #ffd700;
+}
+
+.star.half {
+  background: linear-gradient(90deg, #ffd700 50%, #666 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.exercise-modal-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.exercise-modal-details strong {
+  color: white;
+}
+
+.exercise-modal-description {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #ccc;
+}
+
+.exercise-modal-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.btn-favorite {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-favorite:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn-favorite.active {
+  background-color: #f44336;
+  border-color: #f44336;
+}
+
+.btn-rating {
+  background-color: white;
+  color: #1a1a1a;
+}
+
+.btn-rating:hover:not(:disabled) {
+  background-color: #4caf50;
+  color: white;
+}
+
+.btn-rating:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.btn-primary {
+  background-color: white;
+  color: #1a1a1a;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background-color: #4caf50;
+  color: white;
+}
+
+/* Rating Modal */
+.modal-title {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.rating-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.rating-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.rating-label {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.rating-radio-group {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.rating-star-btn {
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  color: #666;
+  cursor: pointer;
+  padding: 0.25rem;
+  transition: all 0.2s;
+  line-height: 1;
+}
+
+.rating-star-btn:hover {
+  color: #ffd700;
+  transform: scale(1.1);
+}
+
+.rating-star-btn.active {
+  color: #ffd700;
+}
+
+.rating-star-btn:focus {
+  outline: none;
+}
+
+.rating-value {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.form-input,
+.form-textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1rem;
+  font-family: inherit;
+  width: 100%;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #888;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #4caf50;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-error {
+  color: #f44336;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+@media (min-width: 768px) {
+  .exercise-modal-content {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .exercise-image,
+  .exercise-muscle-image {
+    flex: 0 0 45%;
+    max-width: 45%;
+    min-width: 300px;
+  }
+
+  .exercise-video {
+    flex: 0 0 45%;
+    max-width: 45%;
+  }
+
+  .exercise-modal-info {
+    flex: 1;
+    padding-left: 2rem;
+  }
+}

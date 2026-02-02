@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Your Energy - фітнес застосунок для пошуку вправ" />
+    <title>Your Energy | Home</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <div id="app">
+      <!-- Header -->
+      <div id="header-container"></div>
+
+      <!-- Main Content -->
+      <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+          <div class="hero-content">
+            <h1 class="hero-title">Your Energy</h1>
+            <p class="hero-description">
+              Відкрийте для себе світ фітнесу та здорового способу життя. Знайдіть ідеальні вправи для своїх цілей та досягайте нових вершин разом з нами.
+            </p>
+            <div class="hero-tags">
+              <span class="tag">Фітнес</span>
+              <span class="tag">Здоров'я</span>
+              <span class="tag">Тренування</span>
+              <span class="tag">Активність</span>
+            </div>
+          </div>
+          <div class="hero-image">
+            <img src="/images/q31.jpeg" alt="Фітнес" />
+          </div>
+        </section>
+
+        <!-- Quote Section -->
+        <aside class="quote-section">
+          <div class="quote-card">
+            <div class="quote-icon">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <circle cx="16" cy="16" r="16" fill="white" opacity="0.1"/>
+                <path d="M12 8L16 12 8 12L12 8Z" fill="white"/>
+              </svg>
+            </div>
+            <h2 class="quote-title">Quote of the day</h2>
+            <p class="quote-text" id="quote-text">Завантаження...</p>
+            <p class="quote-author" id="quote-author"></p>
+            <div class="quote-quotes">"</div>
+          </div>
+          <div class="quote-info">
+            <div class="quote-info-content">
+              <div class="quote-info-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 2L2 7l10 5 10-5-10-5z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M2 17l10 5 10-5M2 12l10 5 10-5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="quote-info-text">
+                <p>
+                  <span class="quote-info-highlight">Щоденна фізична активність</span> тривалістю щонайменше 
+                  <span class="quote-info-number">110 хвилин</span> допомагає підтримувати 
+                  <span class="quote-info-highlight">здоров'я та енергію</span> протягом усього дня.
+                </p>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Search Section -->
+        <section class="search-section">
+          <form class="search-form" id="search-form">
+            <input
+              type="text"
+              class="search-input"
+              id="search-input"
+              placeholder="Search"
+              aria-label="Пошук вправ"
+            />
+            <button type="submit" class="search-button" aria-label="Пошук">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path
+                  d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16zM18 18l-4.35-4.35"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </form>
+        </section>
+
+        <!-- Filters Section -->
+        <section class="filters-section">
+          <h2 class="section-title">Фільтри</h2>
+          <div class="filters-tabs">
+            <button class="filter-tab active" data-filter="Muscles">Muscles</button>
+            <button class="filter-tab" data-filter="Body parts">Body parts</button>
+            <button class="filter-tab" data-filter="Equipment">Equipment</button>
+          </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="categories-section" id="categories-section">
+          <div class="categories-grid" id="categories-grid">
+            <!-- Categories will be loaded here -->
+          </div>
+          <div class="categories-pagination" id="categories-pagination">
+            <!-- Pagination will be loaded here -->
+          </div>
+        </section>
+
+        <!-- Exercises Section -->
+        <section class="exercises-section hidden" id="exercises-section">
+          <div class="exercises-header">
+            <h2 class="section-title" id="exercises-title">Вправи</h2>
+          </div>
+          <div class="exercises-grid" id="exercises-grid">
+            <!-- Exercises will be loaded here -->
+          </div>
+          <div class="pagination" id="pagination">
+            <!-- Pagination will be loaded here -->
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <div id="footer-container"></div>
+    </div>
+
+    <!-- Modal Exercise -->
+    <div class="modal-backdrop hidden" id="exercise-modal-backdrop">
+      <div class="modal" id="exercise-modal">
+        <button class="modal-close" id="exercise-modal-close" aria-label="Закрити">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M18 6L6 18M6 6l12 12"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+        <div class="modal-content" id="exercise-modal-content">
+          <!-- Exercise details will be loaded here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Rating -->
+    <div class="modal-backdrop hidden" id="rating-modal-backdrop">
+      <div class="modal" id="rating-modal">
+        <button class="modal-close" id="rating-modal-close" aria-label="Закрити">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M18 6L6 18M6 6l12 12"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+        <div class="modal-content">
+          <h3 class="modal-title">Оцінити вправу</h3>
+          <form class="rating-form" id="rating-form">
+            <div class="rating-input-group">
+              <label class="rating-label">Рейтинг</label>
+              <div class="rating-radio-group" id="rating-radio-group">
+                <!-- Rating stars will be generated here -->
+              </div>
+              <span class="rating-value" id="rating-value">0.0</span>
+            </div>
+            <div class="form-group">
+              <label for="rating-email" class="form-label">Email</label>
+              <input
+                type="email"
+                id="rating-email"
+                class="form-input"
+                placeholder="Введіть ваш email"
+              />
+              <span class="form-error" id="rating-email-error"></span>
+            </div>
+            <div class="form-group">
+              <label for="rating-comment" class="form-label">Ваш коментар</label>
+              <textarea
+                id="rating-comment"
+                class="form-textarea"
+                placeholder="Залиште ваш коментар (необов'язково)"
+                rows="4"
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Відправити</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

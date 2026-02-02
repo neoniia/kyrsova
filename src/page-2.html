@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Your Energy - улюблені вправи" />
+    <title>Your Energy | Favorites</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <div id="app">
+      <!-- Header -->
+      <div id="header-container"></div>
+
+      <!-- Main Content -->
+      <main class="favorites-page">
+        <!-- Quote Section -->
+        <aside class="quote-section">
+          <div class="quote-card">
+            <div class="quote-icon">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <circle cx="16" cy="16" r="16" fill="white" opacity="0.1"/>
+                <path d="M12 8L16 12 8 12L12 8Z" fill="white"/>
+              </svg>
+            </div>
+            <h2 class="quote-title">Quote of the day</h2>
+            <p class="quote-text" id="quote-text-favorites">Завантаження...</p>
+            <p class="quote-author" id="quote-author-favorites"></p>
+            <div class="quote-quotes">"</div>
+          </div>
+          <div class="quote-info">
+            <div class="quote-info-content">
+              <div class="quote-info-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 2L2 7l10 5 10-5-10-5z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M2 17l10 5 10-5M2 12l10 5 10-5"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="quote-info-text">
+                <p>
+                  <span class="quote-info-highlight">Щоденна фізична активність</span> тривалістю щонайменше 
+                  <span class="quote-info-number">110 хвилин</span> допомагає підтримувати 
+                  <span class="quote-info-highlight">здоров'я та енергію</span> протягом усього дня.
+                </p>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Favorites Section -->
+        <section class="favorites-section">
+          <h2 class="section-title">Улюблені вправи</h2>
+          <div class="favorites-grid" id="favorites-grid">
+            <!-- Favorites will be loaded here -->
+          </div>
+          <div class="favorites-empty hidden" id="favorites-empty">
+            <p>Ваш список улюблених вправ порожній. Додайте вправи з головної сторінки.</p>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <div id="footer-container"></div>
+    </div>
+
+    <!-- Modal Exercise -->
+    <div class="modal-backdrop hidden" id="exercise-modal-backdrop">
+      <div class="modal" id="exercise-modal">
+        <button class="modal-close" id="exercise-modal-close" aria-label="Закрити">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M18 6L6 18M6 6l12 12"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+        <div class="modal-content" id="exercise-modal-content">
+          <!-- Exercise details will be loaded here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Rating -->
+    <div class="modal-backdrop hidden" id="rating-modal-backdrop">
+      <div class="modal" id="rating-modal">
+        <button class="modal-close" id="rating-modal-close" aria-label="Закрити">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M18 6L6 18M6 6l12 12"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+        <div class="modal-content">
+          <h3 class="modal-title">Оцінити вправу</h3>
+          <form class="rating-form" id="rating-form">
+            <div class="rating-input-group">
+              <label class="rating-label">Рейтинг</label>
+              <div class="rating-radio-group" id="rating-radio-group">
+                <!-- Rating stars will be generated here -->
+              </div>
+              <span class="rating-value" id="rating-value">0.0</span>
+            </div>
+            <div class="form-group">
+              <label for="rating-email" class="form-label">Email</label>
+              <input
+                type="email"
+                id="rating-email"
+                class="form-input"
+                placeholder="Введіть ваш email"
+              />
+              <span class="form-error" id="rating-email-error"></span>
+            </div>
+            <div class="form-group">
+              <label for="rating-comment" class="form-label">Ваш коментар</label>
+              <textarea
+                id="rating-comment"
+                class="form-textarea"
+                placeholder="Залиште ваш коментар (необов'язково)"
+                rows="4"
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Відправити</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

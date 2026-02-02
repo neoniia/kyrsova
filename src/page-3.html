@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Your Energy - вправи категорії" />
+    <title>Your Energy | Exercises</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <div id="app">
+      <!-- Header -->
+      <div id="header-container"></div>
+
+      <!-- Main Content -->
+      <main class="exercises-page">
+        <div class="exercises-page-header">
+          <button class="back-btn" id="back-btn" aria-label="Назад">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M19 12H5M12 19l-7-7 7-7"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            Назад
+          </button>
+          <div class="page-header-content">
+            <h1 class="page-title" id="category-title">Вправи</h1>
+            <p class="page-description" id="category-description"></p>
+          </div>
+        </div>
+
+        <div class="exercises-page-content">
+          <div class="muscle-tabs-container">
+            <div class="muscle-tabs" id="muscle-tabs">
+              <button class="muscle-tab" data-muscle="abs">Прес</button>
+              <button class="muscle-tab" data-muscle="biceps">Біцепси</button>
+              <button class="muscle-tab" data-muscle="pectorals">Груди</button>
+              <button class="muscle-tab" data-muscle="serratus anterior">Серратні</button>
+              <button class="muscle-tab" data-muscle="cardiovascular system">Кардіо</button>
+              <button class="muscle-tab" data-muscle="adductors">Аддуктори</button>
+              <button class="muscle-tab" data-muscle="lats">Широчі</button>
+              <button class="muscle-tab" data-muscle="traps">Трапеції</button>
+              <button class="muscle-tab" data-muscle="triceps">Трицепси</button>
+              <button class="muscle-tab" data-muscle="calves">Литки</button>
+              <button class="muscle-tab" data-muscle="levator scapulae">Леватор</button>
+              <button class="muscle-tab" data-muscle="quads">Квадри</button>
+            </div>
+          </div>
+          <div class="exercises-grid" id="exercises-grid">
+            <!-- Exercises will be loaded here -->
+          </div>
+          <div class="pagination" id="pagination">
+            <!-- Pagination will be loaded here -->
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <div id="footer-container"></div>
+    </div>
+
+    <!-- Modal Exercise -->
+    <div class="modal-backdrop hidden" id="exercise-modal-backdrop">
+      <div class="modal" id="exercise-modal">
+        <button class="modal-close" id="exercise-modal-close" aria-label="Закрити">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M18 6L6 18M6 6l12 12"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+        <div class="modal-content" id="exercise-modal-content">
+          <!-- Exercise details will be loaded here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Rating -->
+    <div class="modal-backdrop hidden" id="rating-modal-backdrop">
+      <div class="modal" id="rating-modal">
+        <button class="modal-close" id="rating-modal-close" aria-label="Закрити">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M18 6L6 18M6 6l12 12"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+        <div class="modal-content">
+          <h3 class="modal-title">Оцінити вправу</h3>
+          <form class="rating-form" id="rating-form">
+            <div class="rating-input-group">
+              <label class="rating-label">Рейтинг</label>
+              <div class="rating-radio-group" id="rating-radio-group">
+                <!-- Rating stars will be generated here -->
+              </div>
+              <span class="rating-value" id="rating-value">0.0</span>
+            </div>
+            <div class="form-group">
+              <label for="rating-email" class="form-label">Email</label>
+              <input
+                type="email"
+                id="rating-email"
+                class="form-input"
+                placeholder="Введіть ваш email"
+              />
+              <span class="form-error" id="rating-email-error"></span>
+            </div>
+            <div class="form-group">
+              <label for="rating-comment" class="form-label">Ваш коментар</label>
+              <textarea
+                id="rating-comment"
+                class="form-textarea"
+                placeholder="Залиште ваш коментар (необов'язково)"
+                rows="4"
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Відправити</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
