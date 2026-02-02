@@ -1,6 +1,6 @@
 import { getExercises, getExerciseById, getFilters } from './api.js';
 import { openExerciseModal, openRatingModal } from './modal.js';
-import { formatRating, showNotification } from './utils.js';
+import { formatRating, showNotification, getAssetPath } from './utils.js';
 import { getMuscleGroupDescription } from './muscle-groups.js';
 import { isFavorite, addToFavorites, removeFromFavorites } from './storage.js';
 
@@ -496,21 +496,21 @@ function createExerciseCard(exercise) {
   // Перевіряємо назву вправи для правильних зображень трицепсів та литок
   const nameLower = name.toLowerCase();
   if (nameLower.includes('dumbbell kickback') || (nameLower.includes('розгинання') && nameLower.includes('нахилі'))) {
-    imageUrl = '/images/ss1.jpg';
+    imageUrl = getAssetPath('/images/ss1.jpg');
   } else if (nameLower.includes('neutral grip bench press') || (nameLower.includes('жим') && nameLower.includes('нейтральним'))) {
-    imageUrl = '/images/ss2.png';
+    imageUrl = getAssetPath('/images/ss2.png');
   } else if (nameLower.includes('handstand push-up') || nameLower.includes('віджимання в стійці')) {
-    imageUrl = '/images/ss3.jpg';
+    imageUrl = getAssetPath('/images/ss3.jpg');
   } else if (nameLower.includes('dumbbell calf raise') || (nameLower.includes('підйом') && nameLower.includes('гантел') && nameLower.includes('стоячи'))) {
-    imageUrl = '/images/gg2.jpg';
+    imageUrl = getAssetPath('/images/gg2.jpg');
   } else if (nameLower.includes('stair calf raise') || nameLower.includes('step calf raise') || (nameLower.includes('підйом') && nameLower.includes('сходин'))) {
-    imageUrl = '/images/gg3.jpg';
+    imageUrl = getAssetPath('/images/gg3.jpg');
   } else if (nameLower.includes('standing calf raise') || (nameLower.includes('calf raise') && nameLower.includes('standing')) || (nameLower.includes('підйом') && nameLower.includes('носки') && !nameLower.includes('гантел') && !nameLower.includes('сходин'))) {
-    imageUrl = '/images/gg1.jpg';
+    imageUrl = getAssetPath('/images/gg1.jpg');
   } else if (nameLower.includes('side push neck stretch') || (nameLower.includes('бічна') && nameLower.includes('розтяжка') && nameLower.includes('натисканням'))) {
-    imageUrl = '/images/qw1.jpeg';
+    imageUrl = getAssetPath('/images/qw1.jpeg');
   } else if (nameLower.includes('neck side stretch') || (nameLower.includes('бічна') && nameLower.includes('розтяжка') && nameLower.includes('шиї') && !nameLower.includes('натисканням'))) {
-    imageUrl = '/images/qw2.jpg';
+    imageUrl = getAssetPath('/images/qw2.jpg');
   }
   
   // Отримуємо інструкції з різних можливих полів API
@@ -1315,13 +1315,13 @@ function getMockAbsExercises() {
         'Затримайтеся на мить у верхній точці, потім повільно опустіть назад.',
         'Повторіть бажану кількість разів.'
       ],
-      gifURL: '/images/z1.jpg',
-      imgURL: '/images/z1.jpg',
-      imageURL: '/images/z1.jpg',
-      image: '/images/z1.jpg',
-      gif: '/images/z1.jpg',
+      gifURL: getAssetPath('/images/z1.jpg'),
+      imgURL: getAssetPath('/images/z1.jpg'),
+      imageURL: getAssetPath('/images/z1.jpg'),
+      image: getAssetPath('/images/z1.jpg'),
+      gif: getAssetPath('/images/z1.jpg'),
       // Анатомічна ілюстрація з 3D моделлю, що показує підсвічені м'язи преса
-      muscleImage: '/images/1.png',
+      muscleImage: getAssetPath('/images/1.png'),
     },
     {
       _id: 'mock-45-side-bend',
@@ -1340,13 +1340,13 @@ function getMockAbsExercises() {
         'Поверніться у початкове положення та повторіть з іншого боку.',
         'Продовжуйте чергувати сторони бажану кількість разів.'
       ],
-      gifURL: '/images/z2.jpg',
-      imgURL: '/images/z2.jpg',
-      imageURL: '/images/z2.jpg',
-      image: '/images/z2.jpg',
-      gif: '/images/z2.jpg',
+      gifURL: getAssetPath('/images/z2.jpg'),
+      imgURL: getAssetPath('/images/z2.jpg'),
+      imageURL: getAssetPath('/images/z2.jpg'),
+      image: getAssetPath('/images/z2.jpg'),
+      gif: getAssetPath('/images/z2.jpg'),
       // Анатомічна ілюстрація з 3D моделлю, що показує підсвічені косі м'язи живота
-      muscleImage: '/images/2.png',
+      muscleImage: getAssetPath('/images/2.png'),
     },
     {
       _id: 'mock-air-bike',
@@ -1365,13 +1365,13 @@ function getMockAbsExercises() {
         'Продовжуйте рух педалювання, напружуючи кор протягом всього руху.',
         'Повторіть бажану кількість разів.'
       ],
-      gifURL: '/images/z3.jpg',
-      imgURL: '/images/z3.jpg',
-      imageURL: '/images/z3.jpg',
-      image: '/images/z3.jpg',
-      gif: '/images/z3.jpg',
+      gifURL: getAssetPath('/images/z3.jpg'),
+      imgURL: getAssetPath('/images/z3.jpg'),
+      imageURL: getAssetPath('/images/z3.jpg'),
+      image: getAssetPath('/images/z3.jpg'),
+      gif: getAssetPath('/images/z3.jpg'),
       // Анатомічна ілюстрація з 3D моделлю, що показує підсвічені м'язи преса та косі м'язи
-      muscleImage: '/images/3.png',
+      muscleImage: getAssetPath('/images/3.png'),
     },
   ];
 }
@@ -1399,11 +1399,11 @@ function getMockBicepsExercises() {
         'Повільно опустіть штангу до початкового положення.',
         'Повторіть бажану кількість разів.'
       ],
-      gifURL: '/images/b2.jpg',
-      imgURL: '/images/b2.jpg',
-      imageURL: '/images/b2.jpg',
-      image: '/images/b2.jpg',
-      gif: '/images/b2.jpg',
+      gifURL: getAssetPath('/images/b2.jpg'),
+      imgURL: getAssetPath('/images/b2.jpg'),
+      imageURL: getAssetPath('/images/b2.jpg'),
+      image: getAssetPath('/images/b2.jpg'),
+      gif: getAssetPath('/images/b2.jpg'),
       muscleImage: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
     },
     {
@@ -1508,11 +1508,11 @@ function getMockPectoralsExercises() {
         'Тримайте спину прямою та контролюйте рух.',
         'Повторіть бажану кількість разів.'
       ],
-      gifURL: '/images/p1.jpg',
-      imgURL: '/images/p1.jpg',
-      imageURL: '/images/p1.jpg',
-      image: '/images/p1.jpg',
-      gif: '/images/p1.jpg',
+      gifURL: getAssetPath('/images/p1.jpg'),
+      imgURL: getAssetPath('/images/p1.jpg'),
+      imageURL: getAssetPath('/images/p1.jpg'),
+      image: getAssetPath('/images/p1.jpg'),
+      gif: getAssetPath('/images/p1.jpg'),
       muscleImage: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
     },
     {
@@ -1533,11 +1533,11 @@ function getMockPectoralsExercises() {
         'Тримайте контроль над рухом на всій амплітуді.',
         'Повторіть бажану кількість разів.'
       ],
-      gifURL: '/images/p2.jpg',
-      imgURL: '/images/p2.jpg',
-      imageURL: '/images/p2.jpg',
-      image: '/images/p2.jpg',
-      gif: '/images/p2.jpg',
+      gifURL: getAssetPath('/images/p2.jpg'),
+      imgURL: getAssetPath('/images/p2.jpg'),
+      imageURL: getAssetPath('/images/p2.jpg'),
+      image: getAssetPath('/images/p2.jpg'),
+      gif: getAssetPath('/images/p2.jpg'),
       muscleImage: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
     },
     {
@@ -1558,11 +1558,11 @@ function getMockPectoralsExercises() {
         'Повільно повертайте рукоятки назад до початкового положення.',
         'Повторіть бажану кількість разів.'
       ],
-      gifURL: '/images/p3.jpg',
-      imgURL: '/images/p3.jpg',
-      imageURL: '/images/p3.jpg',
-      image: '/images/p3.jpg',
-      gif: '/images/p3.jpg',
+      gifURL: getAssetPath('/images/p3.jpg'),
+      imgURL: getAssetPath('/images/p3.jpg'),
+      imageURL: getAssetPath('/images/p3.jpg'),
+      image: getAssetPath('/images/p3.jpg'),
+      gif: getAssetPath('/images/p3.jpg'),
       muscleImage: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
     },
   ];
@@ -1696,11 +1696,11 @@ function getMockCardioExercises() {
         'Відтисніться один раз.',
         'Відстрибніть ногами назад до присідання та вистрибніть вгору.'
       ],
-      gifURL: '/images/be1.jpg',
-      imgURL: '/images/be1.jpg',
-      imageURL: '/images/be1.jpg',
-      image: '/images/be1.jpg',
-      gif: '/images/be1.jpg',
+      gifURL: getAssetPath('/images/be1.jpg'),
+      imgURL: getAssetPath('/images/be1.jpg'),
+      imageURL: getAssetPath('/images/be1.jpg'),
+      image: getAssetPath('/images/be1.jpg'),
+      gif: getAssetPath('/images/be1.jpg'),
       muscleImage: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
     },
     {
@@ -1754,11 +1754,11 @@ function getMockAdductorsExercises() {
         'Затримайтеся в позиції на 30-60 секунд, дихаючи глибоко.',
         'Поверніться у початкове положення та повторіть.'
       ],
-      gifURL: '/images/qq1.jpg',
-      imgURL: '/images/qq1.jpg',
-      imageURL: '/images/qq1.jpg',
-      image: '/images/qq1.jpg',
-      gif: '/images/qq1.jpg',
+      gifURL: getAssetPath('/images/qq1.jpg'),
+      imgURL: getAssetPath('/images/qq1.jpg'),
+      imageURL: getAssetPath('/images/qq1.jpg'),
+      image: getAssetPath('/images/qq1.jpg'),
+      gif: getAssetPath('/images/qq1.jpg'),
       muscleImage: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
     },
     {
@@ -1780,11 +1780,11 @@ function getMockAdductorsExercises() {
         'Повільно поверніть ногу у початкове положення.',
         'Повторіть бажану кількість разів на кожну ногу.'
       ],
-      gifURL: '/images/qq2.jpg',
-      imgURL: '/images/qq2.jpg',
-      imageURL: '/images/qq2.jpg',
-      image: '/images/qq2.jpg',
-      gif: '/images/qq2.jpg',
+      gifURL: getAssetPath('/images/qq2.jpg'),
+      imgURL: getAssetPath('/images/qq2.jpg'),
+      imageURL: getAssetPath('/images/qq2.jpg'),
+      image: getAssetPath('/images/qq2.jpg'),
+      gif: getAssetPath('/images/qq2.jpg'),
       muscleImage: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
     },
     {
@@ -1806,11 +1806,11 @@ function getMockAdductorsExercises() {
         'Повільно поверніть ноги у початкове положення, контролюючи рух.',
         'Повторіть бажану кількість разів.'
       ],
-      gifURL: '/images/qq3.jpg',
-      imgURL: '/images/qq3.jpg',
-      imageURL: '/images/qq3.jpg',
-      image: '/images/qq3.jpg',
-      gif: '/images/qq3.jpg',
+      gifURL: getAssetPath('/images/qq3.jpg'),
+      imgURL: getAssetPath('/images/qq3.jpg'),
+      imageURL: getAssetPath('/images/qq3.jpg'),
+      image: getAssetPath('/images/qq3.jpg'),
+      gif: getAssetPath('/images/qq3.jpg'),
       muscleImage: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
     },
   ];
@@ -1841,11 +1841,11 @@ function getMockLatsExercises() {
         'Тримайте контроль над рухом протягом всього виконання.',
         'Повторіть бажану кількість разів.'
       ],
-      gifURL: '/images/ww1.jpg',
-      imgURL: '/images/ww1.jpg',
-      imageURL: '/images/ww1.jpg',
-      image: '/images/ww1.jpg',
-      gif: '/images/ww1.jpg',
+      gifURL: getAssetPath('/images/ww1.jpg'),
+      imgURL: getAssetPath('/images/ww1.jpg'),
+      imageURL: getAssetPath('/images/ww1.jpg'),
+      image: getAssetPath('/images/ww1.jpg'),
+      gif: getAssetPath('/images/ww1.jpg'),
       muscleImage: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
     },
     {
@@ -1868,11 +1868,11 @@ function getMockLatsExercises() {
         'Повільно повертайте рукоятку вгору до повного розтягування.',
         'Повторіть бажану кількість разів.'
       ],
-      gifURL: '/images/ww2.jpg',
-      imgURL: '/images/ww2.jpg',
-      imageURL: '/images/ww2.jpg',
-      image: '/images/ww2.jpg',
-      gif: '/images/ww2.jpg',
+      gifURL: getAssetPath('/images/ww2.jpg'),
+      imgURL: getAssetPath('/images/ww2.jpg'),
+      imageURL: getAssetPath('/images/ww2.jpg'),
+      image: getAssetPath('/images/ww2.jpg'),
+      gif: getAssetPath('/images/ww2.jpg'),
       muscleImage: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
     },
     {
@@ -1895,11 +1895,11 @@ function getMockLatsExercises() {
         'Повторіть рух з поворотом у протилежний бік.',
         'Продовжуйте чергувати сторони або виконуйте всі повторення на одну сторону, потім на іншу.'
       ],
-      gifURL: '/images/ww3.jpg',
-      imgURL: '/images/ww3.jpg',
-      imageURL: '/images/ww3.jpg',
-      image: '/images/ww3.jpg',
-      gif: '/images/ww3.jpg',
+      gifURL: getAssetPath('/images/ww3.jpg'),
+      imgURL: getAssetPath('/images/ww3.jpg'),
+      imageURL: getAssetPath('/images/ww3.jpg'),
+      image: getAssetPath('/images/ww3.jpg'),
+      gif: getAssetPath('/images/ww3.jpg'),
       muscleImage: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
     },
   ];
@@ -1930,11 +1930,11 @@ function getMockTrapsExercises() {
         'Тримайте спину прямою протягом всього виконання.',
         'Повторіть бажану кількість разів.'
       ],
-      gifURL: '/images/ee1.jpg',
-      imgURL: '/images/ee1.jpg',
-      imageURL: '/images/ee1.jpg',
-      image: '/images/ee1.jpg',
-      gif: '/images/ee1.jpg',
+      gifURL: getAssetPath('/images/ee1.jpg'),
+      imgURL: getAssetPath('/images/ee1.jpg'),
+      imageURL: getAssetPath('/images/ee1.jpg'),
+      image: getAssetPath('/images/ee1.jpg'),
+      gif: getAssetPath('/images/ee1.jpg'),
       muscleImage: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
     },
     {
@@ -1956,11 +1956,11 @@ function getMockTrapsExercises() {
         'Тримайте спину прямою та уникайте обертань плечей.',
         'Повторіть бажану кількість разів.'
       ],
-      gifURL: '/images/ee2.jpg',
-      imgURL: '/images/ee2.jpg',
-      imageURL: '/images/ee2.jpg',
-      image: '/images/ee2.jpg',
-      gif: '/images/ee2.jpg',
+      gifURL: getAssetPath('/images/ee2.jpg'),
+      imgURL: getAssetPath('/images/ee2.jpg'),
+      imageURL: getAssetPath('/images/ee2.jpg'),
+      image: getAssetPath('/images/ee2.jpg'),
+      gif: getAssetPath('/images/ee2.jpg'),
       muscleImage: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
     },
     {
@@ -1983,11 +1983,11 @@ function getMockTrapsExercises() {
         'Повільно повертайте канат у початкове положення, контролюючи рух.',
         'Повторіть бажану кількість разів.'
       ],
-      gifURL: '/images/ee3.jpg',
-      imgURL: '/images/ee3.jpg',
-      imageURL: '/images/ee3.jpg',
-      image: '/images/ee3.jpg',
-      gif: '/images/ee3.jpg',
+      gifURL: getAssetPath('/images/ee3.jpg'),
+      imgURL: getAssetPath('/images/ee3.jpg'),
+      imageURL: getAssetPath('/images/ee3.jpg'),
+      image: getAssetPath('/images/ee3.jpg'),
+      gif: getAssetPath('/images/ee3.jpg'),
       muscleImage: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
     },
   ];
@@ -2018,11 +2018,11 @@ function getMockTricepsExercises() {
         'Повільно повертайте гантель у початкове положення, контролюючи рух.',
         'Повторіть бажану кількість разів на одну руку, потім на іншу.'
       ],
-      gifURL: '/images/ss1.jpg',
-      imgURL: '/images/ss1.jpg',
-      imageURL: '/images/ss1.jpg',
-      image: '/images/ss1.jpg',
-      gif: '/images/ss1.jpg',
+      gifURL: getAssetPath('/images/ss1.jpg'),
+      imgURL: getAssetPath('/images/ss1.jpg'),
+      imageURL: getAssetPath('/images/ss1.jpg'),
+      image: getAssetPath('/images/ss1.jpg'),
+      gif: getAssetPath('/images/ss1.jpg'),
       muscleImage: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
     },
     {
@@ -2044,11 +2044,11 @@ function getMockTricepsExercises() {
         'У верхній точці максимально стисніть трицепси та затримайтеся на мить.',
         'Повторіть бажану кількість разів.'
       ],
-      gifURL: '/images/ss2.png',
-      imgURL: '/images/ss2.png',
-      imageURL: '/images/ss2.png',
-      image: '/images/ss2.png',
-      gif: '/images/ss2.png',
+      gifURL: getAssetPath('/images/ss2.png'),
+      imgURL: getAssetPath('/images/ss2.png'),
+      imageURL: getAssetPath('/images/ss2.png'),
+      image: getAssetPath('/images/ss2.png'),
+      gif: getAssetPath('/images/ss2.png'),
       muscleImage: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
     },
     {
@@ -2070,11 +2070,11 @@ function getMockTricepsExercises() {
         'Тримайте контроль над рухом та балансом.',
         'Повторіть бажану кількість разів.'
       ],
-      gifURL: '/images/ss3.jpg',
-      imgURL: '/images/ss3.jpg',
-      imageURL: '/images/ss3.jpg',
-      image: '/images/ss3.jpg',
-      gif: '/images/ss3.jpg',
+      gifURL: getAssetPath('/images/ss3.jpg'),
+      imgURL: getAssetPath('/images/ss3.jpg'),
+      imageURL: getAssetPath('/images/ss3.jpg'),
+      image: getAssetPath('/images/ss3.jpg'),
+      gif: getAssetPath('/images/ss3.jpg'),
       muscleImage: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
     },
   ];
@@ -2103,11 +2103,11 @@ function getMockCalvesExercises() {
         'Опускайтеся вниз до початкового положення.',
         'Повторіть бажану кількість разів.'
       ],
-      gifURL: '/images/gg1.jpg',
-      imgURL: '/images/gg1.jpg',
-      imageURL: '/images/gg1.jpg',
-      image: '/images/gg1.jpg',
-      gif: '/images/gg1.jpg',
+      gifURL: getAssetPath('/images/gg1.jpg'),
+      imgURL: getAssetPath('/images/gg1.jpg'),
+      imageURL: getAssetPath('/images/gg1.jpg'),
+      image: getAssetPath('/images/gg1.jpg'),
+      gif: getAssetPath('/images/gg1.jpg'),
       muscleImage: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
     },
     {
@@ -2129,11 +2129,11 @@ function getMockCalvesExercises() {
         'Тримайте спину прямою та контролюйте рух протягом всього виконання.',
         'Повторіть бажану кількість разів.'
       ],
-      gifURL: '/images/gg2.jpg',
-      imgURL: '/images/gg2.jpg',
-      imageURL: '/images/gg2.jpg',
-      image: '/images/gg2.jpg',
-      gif: '/images/gg2.jpg',
+      gifURL: getAssetPath('/images/gg2.jpg'),
+      imgURL: getAssetPath('/images/gg2.jpg'),
+      imageURL: getAssetPath('/images/gg2.jpg'),
+      image: getAssetPath('/images/gg2.jpg'),
+      gif: getAssetPath('/images/gg2.jpg'),
       muscleImage: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
     },
     {
@@ -2155,11 +2155,11 @@ function getMockCalvesExercises() {
         'Повільно опускайтеся вниз до максимального розтягнення.',
         'Повторіть бажану кількість разів.'
       ],
-      gifURL: '/images/gg3.jpg',
-      imgURL: '/images/gg3.jpg',
-      imageURL: '/images/gg3.jpg',
-      image: '/images/gg3.jpg',
-      gif: '/images/gg3.jpg',
+      gifURL: getAssetPath('/images/gg3.jpg'),
+      imgURL: getAssetPath('/images/gg3.jpg'),
+      imageURL: getAssetPath('/images/gg3.jpg'),
+      image: getAssetPath('/images/gg3.jpg'),
+      gif: getAssetPath('/images/gg3.jpg'),
       muscleImage: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
     },
   ];
@@ -2269,11 +2269,11 @@ function getMockQuadsExercises() {
         'Відтискайтеся назад до початкового положення.',
         'Повторіть бажану кількість разів.'
       ],
-      gifURL: '/images/qqq1.jpg',
-      imgURL: '/images/qqq1.jpg',
-      imageURL: '/images/qqq1.jpg',
-      image: '/images/qqq1.jpg',
-      gif: '/images/qqq1.jpg',
+      gifURL: getAssetPath('/images/qqq1.jpg'),
+      imgURL: getAssetPath('/images/qqq1.jpg'),
+      imageURL: getAssetPath('/images/qqq1.jpg'),
+      image: getAssetPath('/images/qqq1.jpg'),
+      gif: getAssetPath('/images/qqq1.jpg'),
       muscleImage: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
     },
     {
@@ -2293,11 +2293,11 @@ function getMockQuadsExercises() {
         'Повторіть на іншу ногу.',
         'Продовжуйте почергово.'
       ],
-      gifURL: '/images/qqq2.webp',
-      imgURL: '/images/qqq2.webp',
-      imageURL: '/images/qqq2.webp',
-      image: '/images/qqq2.webp',
-      gif: '/images/qqq2.webp',
+      gifURL: getAssetPath('/images/qqq2.webp'),
+      imgURL: getAssetPath('/images/qqq2.webp'),
+      imageURL: getAssetPath('/images/qqq2.webp'),
+      image: getAssetPath('/images/qqq2.webp'),
+      gif: getAssetPath('/images/qqq2.webp'),
       muscleImage: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
     },
     {
@@ -2317,11 +2317,11 @@ function getMockQuadsExercises() {
         'Тримайте контроль над рухом.',
         'Повторіть бажану кількість разів.'
       ],
-      gifURL: '/images/qqq3.jpg',
-      imgURL: '/images/qqq3.jpg',
-      imageURL: '/images/qqq3.jpg',
-      image: '/images/qqq3.jpg',
-      gif: '/images/qqq3.jpg',
+      gifURL: getAssetPath('/images/qqq3.jpg'),
+      imgURL: getAssetPath('/images/qqq3.jpg'),
+      imageURL: getAssetPath('/images/qqq3.jpg'),
+      image: getAssetPath('/images/qqq3.jpg'),
+      gif: getAssetPath('/images/qqq3.jpg'),
       muscleImage: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
     },
   ];
@@ -2701,13 +2701,13 @@ export function getAnatomicalImageUrl(exerciseName, target) {
   // Мапінг вправ на локальні анатомічні зображення
   // Використовуємо локальні файли, якщо вони є (додаються вручну)
   const localAnatomicalImageMap = {
-    '3/4 sit-up': '/images/z1-anatomical.jpg',
-    '3/4 підйому тулуба': '/images/z1-anatomical.jpg',
-    '45° side bend': '/images/z2-anatomical.jpg',
-    'бічний нахил 45°': '/images/z2-anatomical.jpg',
-    '45 side bend': '/images/z2-anatomical.jpg',
-    'air bike': '/images/z3-anatomical.jpg',
-    'велосипед': '/images/z3-anatomical.jpg',
+    '3/4 sit-up': getAssetPath('/images/z1-anatomical.jpg'),
+    '3/4 підйому тулуба': getAssetPath('/images/z1-anatomical.jpg'),
+    '45° side bend': getAssetPath('/images/z2-anatomical.jpg'),
+    'бічний нахил 45°': getAssetPath('/images/z2-anatomical.jpg'),
+    '45 side bend': getAssetPath('/images/z2-anatomical.jpg'),
+    'air bike': getAssetPath('/images/z3-anatomical.jpg'),
+    'велосипед': getAssetPath('/images/z3-anatomical.jpg'),
   };
   
   // Перевіряємо точну назву вправи для локальних файлів
@@ -3144,21 +3144,21 @@ function createModalStyleCard(exercise) {
   // Використовуємо локальні зображення z1, z2, z3
   if (nameLower.includes('3/4 sit-up') || nameLower.includes('3/4 sit up') || nameLower.includes('3/4 підйому тулуба')) {
     // 3/4 підйому тулуба - використовуємо зображення z1
-    imageUrl = '/images/z1.jpg';
+    imageUrl = getAssetPath('/images/z1.jpg');
     // Для mock-упражнений зберігаємо оригінальне анатомічне зображення
     if (!isMockExercise && !muscleImageUrl) {
       muscleImageUrl = getAnatomicalImageUrl(name, exercise.target || '');
     }
   } else if (nameLower.includes('45° side bend') || nameLower.includes('45 side bend') || (nameLower.includes('side') && nameLower.includes('bend') && nameLower.includes('45')) || nameLower.includes('бічний нахил 45')) {
     // Бічний нахил 45° - використовуємо зображення z2
-    imageUrl = '/images/z2.jpg';
+    imageUrl = getAssetPath('/images/z2.jpg');
     // Для mock-упражнений зберігаємо оригінальне анатомічне зображення
     if (!isMockExercise && !muscleImageUrl) {
       muscleImageUrl = getAnatomicalImageUrl(name, exercise.target || '');
     }
   } else if (nameLower === 'air bike' || (nameLower.includes('air') && nameLower.includes('bike')) || nameLower.includes('велосипед')) {
     // Велосипед - використовуємо зображення z3
-    imageUrl = '/images/z3.jpg';
+    imageUrl = getAssetPath('/images/z3.jpg');
     // Для mock-упражнений зберігаємо оригінальне анатомічне зображення
     if (!isMockExercise && !muscleImageUrl) {
       muscleImageUrl = getAnatomicalImageUrl(name, exercise.target || '');
@@ -3170,67 +3170,67 @@ function createModalStyleCard(exercise) {
     imageUrl = '/src/images/barbell-curl.jpg'; // Додайте файл з цією назвою в папку src/images/
   } else if (nameLower.includes('barbell prone incline curl') || nameLower.includes('prone incline curl') || (nameLower.includes('incline') && nameLower.includes('curl'))) {
     // Підйом штанги на біцепс лежачи на похилій лавці - використовуємо локальне зображення b2
-    imageUrl = '/images/b2.jpg'; // Оскільки root в vite.config.js встановлено на './src', використовуємо /images/
+    imageUrl = getAssetPath('/images/b2.jpg'); // Оскільки root в vite.config.js встановлено на './src', використовуємо /images/
   } else if (nameLower.includes('barbell standing reverse grip curl') || nameLower.includes('reverse grip curl') || (nameLower.includes('reverse') && nameLower.includes('curl'))) {
     // Підйом штанги на біцепс зворотним хватом - використовуємо локальне зображення b3
-    imageUrl = '/images/b3.jpg'; // Оскільки root в vite.config.js встановлено на './src', використовуємо /images/
+    imageUrl = getAssetPath('/images/b3.jpg'); // Оскільки root в vite.config.js встановлено на './src', використовуємо /images/
   // Вправи на трицепси
   } else if (nameLower.includes('dumbbell kickback') || (nameLower.includes('розгинання') && nameLower.includes('нахилі'))) {
     // Розгинання трицепса з гантеллю в нахилі - використовуємо локальне зображення ss1
-    imageUrl = '/images/ss1.jpg';
+    imageUrl = getAssetPath('/images/ss1.jpg');
   } else if (nameLower.includes('neutral grip bench press') || (nameLower.includes('жим') && nameLower.includes('нейтральним'))) {
     // Жим гантелей нейтральним хватом лежачи - використовуємо локальне зображення ss2
-    imageUrl = '/images/ss2.png';
+    imageUrl = getAssetPath('/images/ss2.png');
   } else if (nameLower.includes('handstand push-up') || nameLower.includes('віджимання в стійці')) {
     // Віджимання в стійці на руках - використовуємо локальне зображення ss3
-    imageUrl = '/images/ss3.jpg';
+    imageUrl = getAssetPath('/images/ss3.jpg');
   // Вправи на литки
   } else if (nameLower.includes('dumbbell calf raise') || (nameLower.includes('підйом') && nameLower.includes('гантел') && nameLower.includes('стоячи'))) {
     // Підйом на носки з гантелями стоячи - використовуємо локальне зображення gg2
-    imageUrl = '/images/gg2.jpg';
+    imageUrl = getAssetPath('/images/gg2.jpg');
   } else if (nameLower.includes('stair calf raise') || nameLower.includes('step calf raise') || (nameLower.includes('підйом') && nameLower.includes('сходин'))) {
     // Підйом на носки на сходинці - використовуємо локальне зображення gg3
-    imageUrl = '/images/gg3.jpg';
+    imageUrl = getAssetPath('/images/gg3.jpg');
   } else if (nameLower.includes('standing calf raise') || (nameLower.includes('calf raise') && nameLower.includes('standing')) || (nameLower.includes('підйом') && nameLower.includes('носки') && !nameLower.includes('гантел') && !nameLower.includes('сходин'))) {
     // Підйом на носки стоячи - використовуємо локальне зображення gg1
-    imageUrl = '/images/gg1.jpg';
+    imageUrl = getAssetPath('/images/gg1.jpg');
   // Вправи на леватор лопатки
   } else if (nameLower.includes('side push neck stretch') || (nameLower.includes('бічна') && nameLower.includes('розтяжка') && nameLower.includes('натисканням'))) {
     // Бічна розтяжка шиї з натисканням - використовуємо локальне зображення qw1
-    imageUrl = '/images/qw1.jpeg';
+    imageUrl = getAssetPath('/images/qw1.jpeg');
   } else if (nameLower.includes('neck side stretch') || (nameLower.includes('бічна') && nameLower.includes('розтяжка') && nameLower.includes('шиї') && !nameLower.includes('натисканням'))) {
     // Бічна розтяжка шиї - використовуємо локальне зображення qw2
-    imageUrl = '/images/qw2.jpg';
+    imageUrl = getAssetPath('/images/qw2.jpg');
   // Вправи на груди
   } else if (nameLower.includes('assisted chest dip') && nameLower.includes('kneeling')) {
     // Віджимання на брусах з допомогою (на колінах) - використовуємо локальне зображення p1
-    imageUrl = '/images/p1.jpg';
+    imageUrl = getAssetPath('/images/p1.jpg');
   } else if (nameLower.includes('barbell decline wide-grip press') || nameLower.includes('barbell decline wide grip press')) {
     // Жим штанги на похилій лавці широким хватом - використовуємо локальне зображення p2
-    imageUrl = '/images/p2.jpg';
+    imageUrl = getAssetPath('/images/p2.jpg');
   } else if (nameLower.includes('cable incline bench press')) {
     // Жим на похилій лавці з канатним тренажером - використовуємо локальне зображення p3
-    imageUrl = '/images/p3.jpg';
+    imageUrl = getAssetPath('/images/p3.jpg');
   // Вправи на серратні м'язи
   } else if (nameLower.includes('smith incline shoulder raise') || (nameLower.includes('smith') && nameLower.includes('incline shoulder raise'))) {
     // Підйом плечей на тренажері Сміта на похилій лавці - використовуємо локальне зображення pp1
-    imageUrl = '/images/pp1.jpg';
+    imageUrl = getAssetPath('/images/pp1.jpg');
   } else if (nameLower.includes('barbell incline shoulder raise') || (nameLower.includes('barbell') && nameLower.includes('incline shoulder raise'))) {
     // Підйом плечей зі штангою на похилій лавці - використовуємо локальне зображення pp2
-    imageUrl = '/images/pp2.jpg';
+    imageUrl = getAssetPath('/images/pp2.jpg');
   } else if (nameLower.includes('dumbbell incline shoulder raise') || (nameLower.includes('dumbbell') && nameLower.includes('incline shoulder raise'))) {
     // Підйом плечей з гантелями на похилій лавці - використовуємо локальне зображення pp3
-    imageUrl = '/images/pp3.jpg';
+    imageUrl = getAssetPath('/images/pp3.jpg');
   // Кардіо вправи
   } else if (name === 'Біг' || nameLower.includes('біг') || nameLower === 'run' || nameLower.includes('run (equipment)') || (nameLower.includes('run') && nameLower.includes('equipment') && !nameLower.includes('running') && !nameLower.includes('burpee'))) {
     // Біг - використовуємо локальне зображення be3
-    imageUrl = '/images/be3.webp';
+    imageUrl = getAssetPath('/images/be3.webp');
   } else if (nameLower.includes('burpee') || nameLower.includes('берпі')) {
     // Берпі - використовуємо локальне зображення be1
-    imageUrl = '/images/be1.jpg';
+    imageUrl = getAssetPath('/images/be1.jpg');
   } else if (nameLower.includes('mountain climber') || nameLower.includes('альпініст')) {
     // Альпініст - використовуємо локальне зображення be2
-    imageUrl = '/images/be2.jpg';
+    imageUrl = getAssetPath('/images/be2.jpg');
   } else if (nameLower.includes('jumping jacks') || nameLower.includes('стрибки з розведенням')) {
     // Стрибки з розведенням рук - використовуємо локальне зображення (залишаємо з API або fallback)
     // imageUrl залишається з API
@@ -3353,7 +3353,11 @@ function createModalStyleCard(exercise) {
           if (this.complete && this.naturalWidth === 0) {
             
             // Якщо це локальне зображення і воно не знайдено, переключаємося на fallback URL з Unsplash
-            if (!errorHandled && imageUrl && (imageUrl.startsWith('/src/images/') || imageUrl.startsWith('./src/images/') || imageUrl.startsWith('/images/'))) {
+            if (!errorHandled && imageUrl && (imageUrl.startsWith('/src/images/') || imageUrl.startsWith('./src/images/') || imageUrl.startsWith('/images/') || imageUrl.includes('/images/'))) {
+              // Отримуємо оригінальний шлях без base для пошуку в fallbackUrls
+              const base = import.meta.env.BASE_URL || '/';
+              const originalPath = imageUrl.replace(base, '/').replace(/^\/\//, '/');
+              
               const fallbackUrls = {
                 '/src/images/barbell-curl.jpg': 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
                 '/images/b2.jpg': 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
@@ -3368,7 +3372,7 @@ function createModalStyleCard(exercise) {
                 '/images/qq3.jpg': 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
               };
               
-              const fallbackUrl = fallbackUrls[imageUrl];
+              const fallbackUrl = fallbackUrls[imageUrl] || fallbackUrls[originalPath];
               if (fallbackUrl) {
                 errorHandled = true;
                 this.src = fallbackUrl;

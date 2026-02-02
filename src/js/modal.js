@@ -1,6 +1,6 @@
 import { getExerciseById, rateExercise } from './api.js';
 import { addToFavorites, removeFromFavorites, isFavorite } from './storage.js';
-import { validateEmail, showNotification, showElement, hideElement, isElementVisible } from './utils.js';
+import { validateEmail, showNotification, showElement, hideElement, isElementVisible, getAssetPath } from './utils.js';
 
 let currentExerciseId = null;
 let exerciseModalBackdrop = null;
@@ -294,100 +294,100 @@ function renderExerciseModal(exercise, container) {
   const nameLower = name.toLowerCase();
   if (nameLower === 'barbell curl' || (nameLower.includes('barbell') && nameLower.includes('curl') && !nameLower.includes('prone') && !nameLower.includes('reverse') && !nameLower.includes('incline')) || (nameLower.includes('підйом штанги на біцепс') && !nameLower.includes('лежачи') && !nameLower.includes('зворотним'))) {
     // Підйом штанги на біцепс - зображення 4
-    muscleImageUrl = '/images/4.png';
+    muscleImageUrl = getAssetPath('/images/4.png');
   } else if (nameLower.includes('barbell prone incline curl') || nameLower.includes('prone incline curl') || (nameLower.includes('incline') && nameLower.includes('curl')) || (nameLower.includes('підйом штанги на біцепс') && nameLower.includes('лежачи') && nameLower.includes('похилій'))) {
     // Підйом штанги на біцепс лежачи на похилій лавці - зображення 5
-    muscleImageUrl = '/images/5.png';
+    muscleImageUrl = getAssetPath('/images/5.png');
   } else if (nameLower.includes('barbell standing reverse grip curl') || nameLower.includes('reverse grip curl') || (nameLower.includes('reverse') && nameLower.includes('curl')) || (nameLower.includes('підйом штанги на біцепс') && nameLower.includes('зворотним'))) {
     // Підйом штанги на біцепс зворотним хватом - зображення 6
-    muscleImageUrl = '/images/6.png';
+    muscleImageUrl = getAssetPath('/images/6.png');
   } else if (nameLower.includes('assisted chest dip') && nameLower.includes('kneeling') || (nameLower.includes('віджимання на брусах') && nameLower.includes('допомогою') && nameLower.includes('колінах'))) {
     // Віджимання на брусах з допомогою (на колінах) - зображення 7
-    muscleImageUrl = '/images/7.png';
+    muscleImageUrl = getAssetPath('/images/7.png');
   } else if (nameLower.includes('barbell decline wide-grip press') || nameLower.includes('barbell decline wide grip press') || (nameLower.includes('жим штанги') && nameLower.includes('похилій лавці') && nameLower.includes('широким'))) {
     // Жим штанги на похилій лавці широким хватом - зображення 8
-    muscleImageUrl = '/images/8.png';
+    muscleImageUrl = getAssetPath('/images/8.png');
   } else if (nameLower.includes('cable incline bench press') || (nameLower.includes('жим') && nameLower.includes('похилій лавці') && nameLower.includes('канатним'))) {
     // Жим на похилій лавці з канатним тренажером - зображення 9
-    muscleImageUrl = '/images/9.png';
+    muscleImageUrl = getAssetPath('/images/9.png');
   } else if (nameLower.includes('smith incline shoulder raise') || (nameLower.includes('smith') && nameLower.includes('incline shoulder raise')) || (nameLower.includes('підйом плечей') && nameLower.includes('тренажері сміта') && nameLower.includes('похилій'))) {
     // Підйом плечей на тренажері Сміта на похилій лавці - зображення 10
-    muscleImageUrl = '/images/10.png';
+    muscleImageUrl = getAssetPath('/images/10.png');
   } else if (nameLower.includes('barbell incline shoulder raise') || (nameLower.includes('barbell') && nameLower.includes('incline shoulder raise')) || (nameLower.includes('підйом плечей') && nameLower.includes('штангою') && nameLower.includes('похилій'))) {
     // Підйом плечей зі штангою на похилій лавці - зображення 11
-    muscleImageUrl = '/images/11.png';
+    muscleImageUrl = getAssetPath('/images/11.png');
   } else if (nameLower.includes('dumbbell incline shoulder raise') || (nameLower.includes('dumbbell') && nameLower.includes('incline shoulder raise')) || (nameLower.includes('підйом плечей') && nameLower.includes('гантелями') && nameLower.includes('похилій'))) {
     // Підйом плечей з гантелями на похилій лавці - зображення 12
-    muscleImageUrl = '/images/12.png';
+    muscleImageUrl = getAssetPath('/images/12.png');
   } else if (nameLower.includes('burpee') || nameLower.includes('берпі')) {
     // Берпі - зображення 111
-    muscleImageUrl = '/images/111.png';
+    muscleImageUrl = getAssetPath('/images/111.png');
   } else if (nameLower.includes('mountain climber') || nameLower.includes('альпініст')) {
     // Альпініст - зображення 222
-    muscleImageUrl = '/images/222.png';
+    muscleImageUrl = getAssetPath('/images/222.png');
   } else if (nameLower === 'run' || (nameLower.includes('run') && nameLower.includes('equipment') && !nameLower.includes('running') && !nameLower.includes('burpee')) || nameLower === 'біг' || (nameLower.includes('біг') && !nameLower.includes('бігова'))) {
     // Біг - зображення 333
-    muscleImageUrl = '/images/333.png';
+    muscleImageUrl = getAssetPath('/images/333.png');
   } else if (nameLower.includes('butterfly yoga') || nameLower.includes('поза метелика')) {
     // Поза метелика (йога) - зображення 444
-    muscleImageUrl = '/images/444.png';
+    muscleImageUrl = getAssetPath('/images/444.png');
   } else if (nameLower.includes('cable hip adduction') || nameLower.includes('зведення стегна на блоці')) {
     // Зведення стегна на блоці - зображення 555
-    muscleImageUrl = '/images/555.png';
+    muscleImageUrl = getAssetPath('/images/555.png');
   } else if (nameLower.includes('lever seated hip adduction') || nameLower.includes('зведення стегна сидячи')) {
     // Зведення стегна сидячи на тренажері - зображення 666
-    muscleImageUrl = '/images/666.png';
+    muscleImageUrl = getAssetPath('/images/666.png');
   } else if (nameLower.includes('gironda sternum chin') || nameLower.includes('підтягування джиронда')) {
     // Підтягування Джиронда до грудей - зображення 1111
-    muscleImageUrl = '/images/1111.png';
+    muscleImageUrl = getAssetPath('/images/1111.png');
   } else if (nameLower.includes('lat pulldown') || nameLower.includes('тяга верхнього блоку')) {
     // Тяга верхнього блоку - зображення 2222
-    muscleImageUrl = '/images/2222.png';
+    muscleImageUrl = getAssetPath('/images/2222.png');
   } else if (nameLower.includes('cable twisting pull') || nameLower.includes('тяга з поворотом')) {
     // Тяга з поворотом на блоці - зображення 3333
-    muscleImageUrl = '/images/3333.png';
+    muscleImageUrl = getAssetPath('/images/3333.png');
   } else if (nameLower.includes('barbell shrug') || nameLower.includes('пожимання плечима зі штангою') || (nameLower.includes('пожимання') && (nameLower.includes('штанга') || nameLower.includes('штангою'))) || (nameLower.includes('пожимання плечами') && !nameLower.includes('гантел'))) {
     // Пожимання плечами / Пожимання плечима зі штангою - зображення qq111
-    muscleImageUrl = '/images/qq111.png';
+    muscleImageUrl = getAssetPath('/images/qq111.png');
   } else if (nameLower.includes('dumbbell shrug') || (nameLower.includes('пожимання') && nameLower.includes('гантел'))) {
     // Пожимання плечима з гантелями - зображення qq222
-    muscleImageUrl = '/images/qq222.png';
+    muscleImageUrl = getAssetPath('/images/qq222.png');
   } else if (nameLower.includes('face pull') || (nameLower.includes('тяга') && nameLower.includes('обличчя'))) {
     // Тяга до обличчя з канатом - зображення qq333
-    muscleImageUrl = '/images/qq333.png';
+    muscleImageUrl = getAssetPath('/images/qq333.png');
   } else if (nameLower.includes('dumbbell kickback') || (nameLower.includes('розгинання трицепса') && nameLower.includes('нахилі')) || (nameLower.includes('розгинання') && nameLower.includes('нахилі') && nameLower.includes('трицепс'))) {
     // Розгинання трицепса з гантеллю в нахилі - зображення tr1
-    muscleImageUrl = '/images/tr1.png';
+    muscleImageUrl = getAssetPath('/images/tr1.png');
   } else if (nameLower.includes('neutral grip bench press') || (nameLower.includes('жим гантелей') && nameLower.includes('нейтральним')) || (nameLower.includes('жим') && nameLower.includes('нейтральним') && nameLower.includes('гантел'))) {
     // Жим гантелей нейтральним хватом лежачи - зображення tr2
-    muscleImageUrl = '/images/tr2.png';
+    muscleImageUrl = getAssetPath('/images/tr2.png');
   } else if (nameLower.includes('handstand push-up') || nameLower.includes('віджимання в стійці на руках') || (nameLower.includes('віджимання') && nameLower.includes('стійці') && nameLower.includes('руках'))) {
     // Віджимання в стійці на руках - зображення tr3
-    muscleImageUrl = '/images/tr3.png';
+    muscleImageUrl = getAssetPath('/images/tr3.png');
   } else if (nameLower.includes('dumbbell calf raise') || (nameLower.includes('підйом') && nameLower.includes('носки') && nameLower.includes('гантел'))) {
     // Підйом на носки з гантелями стоячи - зображення zz2
-    muscleImageUrl = '/images/zz2.png';
+    muscleImageUrl = getAssetPath('/images/zz2.png');
   } else if (nameLower.includes('stair calf raise') || nameLower.includes('step calf raise') || (nameLower.includes('підйом') && nameLower.includes('носки') && nameLower.includes('сходин'))) {
     // Підйом на носки на сходинці - зображення zz3
-    muscleImageUrl = '/images/zz3.png';
+    muscleImageUrl = getAssetPath('/images/zz3.png');
   } else if (nameLower.includes('standing calf raise') || (nameLower.includes('calf raise') && nameLower.includes('standing') && !nameLower.includes('dumbbell') && !nameLower.includes('stair') && !nameLower.includes('step')) || (nameLower.includes('підйом') && nameLower.includes('носки') && !nameLower.includes('гантел') && !nameLower.includes('сходин') && !nameLower.includes('сидячи'))) {
     // Підйоми на носки / Підйом на носки стоячи - зображення zz1
-    muscleImageUrl = '/images/zz1.png';
+    muscleImageUrl = getAssetPath('/images/zz1.png');
   } else if (nameLower.includes('side push neck stretch') || (nameLower.includes('бічна') && nameLower.includes('розтяжка') && nameLower.includes('натисканням'))) {
     // Бічна розтяжка шиї з натисканням - зображення z31
-    muscleImageUrl = '/images/z31.png';
+    muscleImageUrl = getAssetPath('/images/z31.png');
   } else if (nameLower.includes('neck side stretch') || (nameLower.includes('бічна') && nameLower.includes('розтяжка') && nameLower.includes('шиї') && !nameLower.includes('натисканням'))) {
     // Бічна розтяжка шиї - зображення z32
-    muscleImageUrl = '/images/z32.png';
+    muscleImageUrl = getAssetPath('/images/z32.png');
   } else if (nameLower.includes('squat') || nameLower.includes('присідання')) {
     // Присідання - зображення qw1
-    muscleImageUrl = '/images/qw1.png';
+    muscleImageUrl = getAssetPath('/images/qw1.png');
   } else if (nameLower.includes('lunge') || nameLower.includes('випади')) {
     // Випади - зображення qw2
-    muscleImageUrl = '/images/qw2.png';
+    muscleImageUrl = getAssetPath('/images/qw2.png');
   } else if (nameLower.includes('leg press') || nameLower.includes('жим ногами')) {
     // Жим ногами - зображення jim
-    muscleImageUrl = '/images/jim.png';
+    muscleImageUrl = getAssetPath('/images/jim.png');
   }
 
   container.innerHTML = `

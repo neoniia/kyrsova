@@ -81,3 +81,18 @@ export function hideElement(element) {
     element.classList.add('hidden');
   }
 }
+
+/**
+ * Отримати правильний шлях до ресурсу з урахуванням base path
+ * @param {string} path - шлях до ресурсу (наприклад, '/images/photo.jpg')
+ * @returns {string} - правильний шлях з урахуванням base
+ */
+export function getAssetPath(path) {
+  // Використовуємо base URL з Vite або відносний шлях
+  const base = import.meta.env.BASE_URL || '/';
+  // Якщо шлях починається з /, додаємо base
+  if (path.startsWith('/')) {
+    return base + path.slice(1);
+  }
+  return path;
+}
